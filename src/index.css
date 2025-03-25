@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Quicksand', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-background;
+  }
+}
+
+@layer components {
+  .kid-button {
+    @apply rounded-2xl py-3 px-6 font-bold transform transition-all duration-200 shadow-kid hover:shadow-kid-lg hover:-translate-y-1 active:translate-y-0 active:shadow-none;
+  }
+
+  .kid-card {
+    @apply bg-white rounded-3xl shadow-kid-lg overflow-hidden transition-all duration-200 hover:-translate-y-2;
+  }
+
+  .kid-input {
+    @apply rounded-xl border-2 border-accent-purple/30 px-4 py-3 text-lg focus:border-accent-purple focus:ring-2 focus:ring-accent-purple/20 outline-none;
+  }
+}
