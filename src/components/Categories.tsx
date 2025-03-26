@@ -1,14 +1,14 @@
 import React from 'react';
-import { Brain, Puzzle, Calculator, Music, Palette, Book, Sparkles } from 'lucide-react';
+import { Brain, Puzzle, Calculator, Music, Palette, Book, Sparkles, Heart } from 'lucide-react';
 
 export const categories = [
   { name: 'All', icon: Sparkles, color: 'bg-accent-purple' },
-  { name: 'Logic', icon: Brain, color: 'bg-accent-blue' },
+  { name: 'Favorites', icon: Heart, color: 'bg-red-500' },
   { name: 'Puzzle', icon: Puzzle, color: 'bg-primary' },
-  { name: 'Math', icon: Calculator, color: 'bg-secondary' },
-  { name: 'Music', icon: Music, color: 'bg-accent-pink' },
-  { name: 'Art', icon: Palette, color: 'bg-primary-dark' },
-  { name: 'Reading', icon: Book, color: 'bg-accent-purple' },
+  { name: 'Action', icon: Brain, color: 'bg-accent-blue' },
+  { name: 'Adventure', icon: Book, color: 'bg-secondary' },
+  { name: 'Role-Playing', icon: Palette, color: 'bg-accent-pink' },
+  { name: 'Strategy', icon: Calculator, color: 'bg-primary-dark' },
 ];
 
 interface CategoriesProps {

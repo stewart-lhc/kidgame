@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Trophy, Clock, Users } from 'lucide-react';
+import { ArrowLeft, Trophy, Clock, Users, Heart } from 'lucide-react';
+import { useFavorites } from '../context/FavoritesContext';
 import { games } from '../data/games';
+import { GameCard } from '../components/GameCard';
 
 export function GameDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const game = games.find(g => g.id === Number(id));
+  const { isFavorite, toggleFavorite } = useFavorites();
+  const game = games.find(g => g.id === id);
 
   if (!game) {
     return (
@@ -15,6 +18,17 @@ export function GameDetailPage() {
       </div>
     );
   }
+
+  // Select 6 random games excluding the current game
+  const randomGames = useMemo(() => {
+    // Create a copy of games array excluding the current game
+    const otherGames = games.filter(g => g.id !== id);
+    
+    // Shuffle the array and take the first 6 games
+    return [...otherGames]
+      .sort(() => 0.5 - Math.random())
+      .slice(0, 6);
+  }, [id]);
 
   return (
     <main className="container mx-auto px-4 py-8">
@@ -26,10 +40,18 @@ export function GameDetailPage() {
         Back to Games
       </button>
 
-      <div className="bg-white rounded-xl overflow-hidden shadow-xl">
+      <div className="bg-white rounded-xl overflow-hidden shadow-xl mb-8">
         <div className="p-6">
           <div className="flex justify-between items-start mb-4">
-            <h1 className="text-3xl font-bold text-gray-800">{game.title}</h1>
+            <div className="flex items-center space-x-4">
+              <h1 className="text-3xl font-bold text-gray-800">{game.title}</h1>
+              <button 
+                onClick={() => id && toggleFavorite(id)}
+                className={`p-2 rounded-full ${id && isFavorite(id) ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-500'}`}
+              >
+                <Heart className="h-6 w-6" fill={id && isFavorite(id) ? 'currentColor' : 'none'} />
+              </button>
+            </div>
             <span className="bg-purple-100 text-purple-600 px-3 py-1 rounded-full">
               Ages {game.ageRange}
             </span>
@@ -51,15 +73,6 @@ export function GameDetailPage() {
           </div>
 
           <p className="text-gray-600 mb-6">{game.description}</p>
-
-          <div className="bg-gray-100 rounded-lg p-4 mb-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">Learning Goals</h3>
-            <ul className="list-disc list-inside text-gray-600">
-              <li>Problem-solving skills</li>
-              <li>Critical thinking</li>
-              <li>Subject mastery</li>
-            </ul>
-          </div>
         </div>
 
         <div className="aspect-[16/9] w-full bg-gray-900">
@@ -69,6 +82,18 @@ export function GameDetailPage() {
             className="w-full h-full border-0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           />
+        </div>
+      </div>
+      
+      {/* More Games Section */}
+      <div className="mt-12">
+        <h2 className="text-2xl font-bold text-white mb-6">More Games You Might Like</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {randomGames.map(randomGame => (
+            <div key={randomGame.id} className="transform scale-90 origin-top-left">
+              <GameCard {...randomGame} />
+            </div>
+          ))}
         </div>
       </div>
     </main>
