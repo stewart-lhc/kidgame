@@ -23,7 +23,7 @@ export function Header() {
   }, [scrolled]);
   
   return (
-    <header className={`bg-white shadow-kid fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'py-2' : 'py-4'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-filter backdrop-blur-md py-2 shadow-kid' : 'bg-white py-4 shadow-kid'}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-3 group">
@@ -74,7 +74,7 @@ export function Header() {
                     className={`${category.color} rounded-xl py-2 px-3 flex flex-col items-center`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    <category.icon className="h-5 w-5 text-white" />
+                    <category.icon className="h-6 w-6 text-white" />
                     <span className="text-white text-sm font-bold mt-1">{category.name}</span>
                   </Link>
                 </li>

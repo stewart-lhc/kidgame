@@ -7,7 +7,7 @@ export const categories = [
   { name: 'Puzzle', icon: Puzzle, color: 'bg-primary' },
   { name: 'Action', icon: Brain, color: 'bg-accent-blue' },
   { name: 'Adventure', icon: Book, color: 'bg-secondary' },
-  { name: 'Role-Playing', icon: Palette, color: 'bg-accent-pink' },
+  { name: 'RPG', icon: Palette, color: 'bg-accent-pink' },
   { name: 'Strategy', icon: Calculator, color: 'bg-primary-dark' },
 ];
 

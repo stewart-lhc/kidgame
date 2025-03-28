@@ -4,6 +4,7 @@ import { ArrowLeft, Trophy, Clock, Users, Heart } from 'lucide-react';
 import { useFavorites } from '../context/FavoritesContext';
 import { games } from '../data/games';
 import { GameCard } from '../components/GameCard';
+import { SimpleGameCard } from '../components/SimpleGameCard';
 
 export function GameDetailPage() {
   const { id } = useParams();
@@ -41,8 +42,8 @@ export function GameDetailPage() {
       </button>
 
       <div className="bg-white rounded-xl overflow-hidden shadow-xl mb-8">
-        <div className="p-6">
-          <div className="flex justify-between items-start mb-4">
+        <div className="p-4 pb-2">
+          <div className="flex justify-between items-start mb-2">
             <div className="flex items-center space-x-4">
               <h1 className="text-3xl font-bold text-gray-800">{game.title}</h1>
               <button 
@@ -56,23 +57,7 @@ export function GameDetailPage() {
               Ages {game.ageRange}
             </span>
           </div>
-
-          <div className="flex gap-4 mb-6">
-            <div className="flex items-center text-gray-600">
-              <Trophy className="h-5 w-5 mr-2" />
-              <span>Points Available</span>
-            </div>
-            <div className="flex items-center text-gray-600">
-              <Clock className="h-5 w-5 mr-2" />
-              <span>5-10 mins</span>
-            </div>
-            <div className="flex items-center text-gray-600">
-              <Users className="h-5 w-5 mr-2" />
-              <span>Single Player</span>
-            </div>
-          </div>
-
-          <p className="text-gray-600 mb-6">{game.description}</p>
+          <p className="text-gray-600 mb-2">{game.description}</p>
         </div>
 
         <div className="aspect-[16/9] w-full bg-gray-900">
@@ -90,8 +75,8 @@ export function GameDetailPage() {
         <h2 className="text-2xl font-bold text-white mb-6">More Games You Might Like</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {randomGames.map(randomGame => (
-            <div key={randomGame.id} className="transform scale-90 origin-top-left">
-              <GameCard {...randomGame} />
+            <div key={randomGame.id}>
+              <SimpleGameCard {...randomGame} />
             </div>
           ))}
         </div>
