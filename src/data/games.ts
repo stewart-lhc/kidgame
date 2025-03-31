@@ -258,7 +258,7 @@ export const games = [
         "imageUrl": "/img/10029.png",
         "category": "Art",
         "ageRange": "3-4",
-        "src": "https://games.poki.com/458768/bd45a718-4eb5-4dfa-80c7-78747deac999?tag=kids"
+        "src": "https://bd45a718-4eb5-4dfa-80c7-78747deac999.poki-gdn.com/6a8c181f-efdc-4dea-b314-ecf80089379c/index.html?country=US&ccpaApplies=1&url_referrer=https%3A%2F%2Fkids.poki.com%2F&tag=kids&game_id=bd45a718-4eb5-4dfa-80c7-78747deac999&game_version_id=6a8c181f-efdc-4dea-b314-ecf80089379c&inspector=0&csp=1"
       },
     {
         "id": "30",
