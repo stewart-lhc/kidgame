@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Trophy, Clock, Users, Heart, Maximize, Minimize } from 'lucide-react';
 import { useFavorites } from '../context/FavoritesContext';
@@ -12,6 +12,10 @@ export function GameDetailPage() {
   const { isFavorite, toggleFavorite } = useFavorites();
   const [isFullscreen, setIsFullscreen] = useState(false);
   const game = games.find(g => g.id === id);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   const toggleFullscreen = () => {
     const iframe = document.getElementById('game-iframe');
