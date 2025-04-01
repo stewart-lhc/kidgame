@@ -17,6 +17,17 @@ export function GameDetailPage() {
     window.scrollTo(0, 0);
   }, [id]);
 
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, []);
+
   const toggleFullscreen = () => {
     const iframe = document.getElementById('game-iframe');
     if (!iframe) return;
@@ -30,7 +41,6 @@ export function GameDetailPage() {
         document.exitFullscreen();
       }
     }
-    setIsFullscreen(!isFullscreen);
   };
 
   if (!game) {
@@ -92,7 +102,7 @@ export function GameDetailPage() {
           </div>
           <button
             onClick={toggleFullscreen}
-            className="absolute top-4 right-4 bg-white/60 p-2 rounded-lg shadow-lg hover:bg-white/80 transition-colors"
+            className="absolute top-4 right-4 bg-white/60 p-2 rounded-lg shadow-lg hover:bg-white/80 transition-colors z-50"
             title="Toggle Fullscreen"
           >
             {isFullscreen ? (
