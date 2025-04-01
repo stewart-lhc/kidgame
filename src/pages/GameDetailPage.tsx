@@ -62,16 +62,16 @@ export function GameDetailPage() {
       {/* Game Info Section */}
       <div className="bg-white/40 backdrop-blur-sm rounded-xl p-4 shadow-xl mb-6 min-h-0">
         <div className="flex flex-wrap justify-between items-center gap-4 mb-2">
-          <h1 className="text-3xl font-bold text-white">{game.title}</h1>
+          <h1 className="text-3xl md:text-3xl sm:text-2xl text-xl font-bold text-white">{game.title}</h1>
           <div className="flex items-center gap-4">
-            <span className="bg-purple-100/50 backdrop-blur-sm text-purple-600 px-4 py-1.5 rounded-full text-sm font-medium">
+            <span className="bg-purple-100/50 backdrop-blur-sm text-purple-600 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium">
               Ages {game.ageRange}
             </span>
             <button 
               onClick={() => id && toggleFavorite(id)}
-              className={`p-2 rounded-full ${id && isFavorite(id) ? 'bg-red-500 text-white' : 'bg-gray-200/50 backdrop-blur-sm text-gray-500'}`}
+              className={`p-1.5 sm:p-2 rounded-full ${id && isFavorite(id) ? 'bg-red-500 text-white' : 'bg-gray-200/50 backdrop-blur-sm text-gray-500'}`}
             >
-              <Heart className="h-6 w-6" fill={id && isFavorite(id) ? 'currentColor' : 'none'} />
+              <Heart className="h-5 w-5 sm:h-6 sm:w-6" fill={id && isFavorite(id) ? 'currentColor' : 'none'} />
             </button>
           </div>
         </div>
@@ -106,7 +106,7 @@ export function GameDetailPage() {
       
       {/* More Games Section */}
       <div className="mt-12">
-        <h2 className="text-2xl font-bold text-white mb-6">More Games You Might Like</h2>
+        <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">More Games You Might Like</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {randomGames.map(randomGame => (
             <div key={randomGame.id}>
