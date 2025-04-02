@@ -1,0 +1,21 @@
+{
+  "name": "OGame.Guru Kids Games",
+  "short_name": "OGame",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#764ABC",
+  "background_color": "#4B9AFF",
+  "display": "standalone",
+  "start_url": "/",
+  "description": "Free online games for children aged 3-10, no download required!"
+} 

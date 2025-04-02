@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- 背景 -->
+  <circle cx="256" cy="256" r="256" fill="#4B9AFF"/>
+  
+  <!-- 游戏手柄形状 -->
+  <path d="M396 186c-20-20-47-31-75-31H191c-28 0-55 11-75 31-20 20-31 47-31 75v70c0 28 11 55 31 75 20 20 47 31 75 31h130c28 0 55-11 75-31 20-20 31-47 31-75v-70c0-28-11-55-31-75z" fill="#764ABC"/>
+  
+  <!-- 左侧按钮 -->
+  <circle cx="160" cy="256" r="20" fill="#FFD600"/>
+  <rect x="140" y="226" width="40" height="10" rx="5" fill="#FFD600"/>
+  <rect x="140" y="276" width="40" height="10" rx="5" fill="#FFD600"/>
+  <rect x="130" y="246" width="10" height="20" rx="5" fill="#FFD600"/>
+  <rect x="180" y="246" width="10" height="20" rx="5" fill="#FFD600"/>
+  
+  <!-- 右侧按钮 -->
+  <circle cx="342" cy="226" r="15" fill="#FF4B4B"/>
+  <circle cx="382" cy="266" r="15" fill="#4BFF4B"/>
+  <circle cx="342" cy="306" r="15" fill="#FFFF4B"/>
+  <circle cx="302" cy="266" r="15" fill="#4B4BFF"/>
+  
+  <!-- 文字 "O" -->
+  <text x="246" y="280" font-family="Arial" font-weight="bold" font-size="80" fill="white">O</text>
+</svg> 

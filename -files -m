@@ -1,0 +1,18 @@
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'public/favicon.svg', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/App.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/Header.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/pages/FavoritesPage.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/pages/GameDetailPage.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/pages/HomePage.tsx', LF will be replaced by CRLF the next time Git touches it
+package-lock.json
+package.json
+src/App.tsx
+src/components/Footer.tsx
+src/components/GameCard.tsx
+src/components/Header.tsx
+src/components/SimpleGameCard.tsx
+src/data/games.ts
+src/pages/FavoritesPage.tsx
+src/pages/GameDetailPage.tsx
+src/pages/HomePage.tsx

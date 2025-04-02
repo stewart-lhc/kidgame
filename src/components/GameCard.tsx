@@ -1,67 +1,84 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Play, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Heart } from 'lucide-react';
 import { useFavorites } from '../context/FavoritesContext';
+import { motion } from 'framer-motion';
 
 interface GameCardProps {
   id: string;
   title: string;
-  description: string; // Keeping this in the interface for compatibility with existing code
+  description: string;
   imageUrl: string;
   category: string;
   ageRange: string;
+  heat: number;
+  releaseDate: string;
 }
 
-export function GameCard({ id, title, description, imageUrl, category, ageRange }: GameCardProps) {
-  const navigate = useNavigate();
+export function GameCard({ 
+  id, 
+  title, 
+  description, 
+  imageUrl, 
+  category, 
+  ageRange, 
+  heat,
+  releaseDate
+}: GameCardProps) {
   const { isFavorite, toggleFavorite } = useFavorites();
   
-  const handleNavigate = () => navigate(`/game/${id}`);
-  
-  const handleToggleFavorite = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Prevent triggering the parent's onClick
-    toggleFavorite(id);
-  };
-
   return (
-    <div 
-      className="kid-card bg-white overflow-hidden cursor-pointer transition-transform hover:scale-105 h-full" 
-      onClick={handleNavigate}
+    <motion.div 
+      whileHover={{ y: -5 }}
+      className="bg-white/30 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl h-full"
     >
-      <div className="relative h-full">
-        <img src={imageUrl} alt={title} className="w-full h-full object-cover" />
-        <div className="absolute top-2 right-2 flex space-x-1">
-          <button 
-            onClick={handleToggleFavorite}
-            className={`p-1.5 rounded-full ${isFavorite(id) ? 'bg-red-500 text-white' : 'bg-white/90 text-gray-500'}`}
-          >
-            <Heart className="h-4 w-4" fill={isFavorite(id) ? 'currentColor' : 'none'} />
-          </button>
-          <span className="bg-white/90 backdrop-blur-sm text-accent-purple font-bold px-3 py-1 rounded-full text-xs">
-            Ages {ageRange}
-          </span>
-        </div>
+      <div className="relative">
+        <Link to={`/game/${id}`}>
+          <img 
+            src={imageUrl} 
+            alt={title} 
+            className="w-full h-48 object-cover"
+          />
+        </Link>
         
-        <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm p-3">
-          <h3 className="text-lg font-bold text-gray-800 mb-1.5 truncate">{title}</h3>
-          
-          <div className="flex justify-between items-center">
-            <span className="bg-primary-light text-primary-dark font-bold px-3 py-1 rounded-full text-xs">
+        <button 
+          onClick={() => toggleFavorite(id)}
+          className={`absolute top-2 right-2 p-2 rounded-full z-10 ${
+            isFavorite(id) 
+              ? 'bg-red-500 text-white' 
+              : 'bg-white/20 backdrop-blur-sm text-white/70 hover:text-white'
+          }`}
+        >
+          <Heart className="h-4 w-4" fill={isFavorite(id) ? 'currentColor' : 'none'} />
+        </button>
+      </div>
+      
+      <div className="p-3">
+        <div className="flex justify-between items-center mb-1">
+          <h3 className="text-base font-bold text-white leading-tight">
+            <Link to={`/game/${id}`} className="hover:text-purple-200 transition-colors">
+              {title}
+            </Link>
+          </h3>
+          <div className="flex items-center gap-1 ml-1 flex-shrink-0">
+            <span className="bg-purple-100/50 backdrop-blur-sm text-purple-600 px-2 py-0.5 rounded-full text-xs font-medium">
+              Ages {ageRange}
+            </span>
+            <span className="bg-blue-100/50 backdrop-blur-sm text-blue-600 px-2 py-0.5 rounded-full text-xs font-medium">
               {category}
             </span>
-            <button 
-              onClick={(e) => {
-                e.stopPropagation(); // Prevent triggering the parent's onClick
-                handleNavigate();
-              }}
-              className="kid-button bg-secondary text-white flex items-center space-x-1 py-1.5 px-3"
-            >
-              <Play className="h-4 w-4" />
-              <span className="text-sm">Play</span>
-            </button>
           </div>
         </div>
+        
+        <p className="text-white/80 text-sm mb-4 line-clamp-2">{description}</p>
+        
+        <Link 
+          to={`/game/${id}`} 
+          className="block bg-purple-500 text-white text-center py-2 rounded-lg hover:bg-purple-600 transition-colors"
+        >
+          Play Now
+        </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }

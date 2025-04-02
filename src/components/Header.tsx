@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Gamepad2, Menu, X } from 'lucide-react';
 import { categories } from './Categories';
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
   
   // Handle scroll effect
   useEffect(() => {
@@ -22,6 +23,10 @@ export function Header() {
     };
   }, [scrolled]);
   
+  const isActive = (path: string) => {
+    return location.pathname === path;
+  };
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-filter backdrop-blur-md py-2 shadow-kid' : 'bg-white py-4 shadow-kid'}`}>
       <div className="container mx-auto px-4">

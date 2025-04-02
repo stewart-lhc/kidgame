@@ -1,7 +1,7 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Play, Heart, Puzzle, Brain, Book, Palette, Calculator } from 'lucide-react';
-import { useFavorites } from '../context/FavoritesContext';
+import { Flame, Calendar } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 interface SimpleGameCardProps {
   id: string;
@@ -9,60 +9,45 @@ interface SimpleGameCardProps {
   imageUrl: string;
   category: string;
   ageRange: string;
+  heat: number;
+  releaseDate: string;
 }
 
-// Map of category names to their corresponding icons
-const categoryIcons: Record<string, React.ElementType> = {
-  'Puzzle': Puzzle,
-  'Action': Brain,
-  'Adventure': Book,
-  'RPG': Palette,
-  'Strategy': Calculator,
-};
-
-export function SimpleGameCard({ id, title, imageUrl, category, ageRange }: SimpleGameCardProps) {
-  const navigate = useNavigate();
-  const { isFavorite } = useFavorites();
-  
-  const handleNavigate = () => navigate(`/game/${id}`);
-  
-  // We'll use the full age range instead of just extracting the minimum age
-  
-  // Get the appropriate icon component for the category
-  const CategoryIcon = categoryIcons[category] || Puzzle; // Default to Puzzle if category not found
-
+export function SimpleGameCard({ id, title, imageUrl, category, ageRange, heat, releaseDate }: SimpleGameCardProps) {
   return (
-    <div 
-      className="bg-white rounded-xl overflow-hidden cursor-pointer transition-transform hover:scale-105 shadow-kid" 
-      onClick={handleNavigate}
+    <motion.div 
+      whileHover={{ scale: 1.05 }}
+      className="relative bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg h-full"
     >
-      <div className="relative aspect-square">
-        <img src={imageUrl} alt={title} className="w-full h-full object-cover" />
-        
-        {/* Favorite indicator */}
-        {isFavorite(id) && (
-          <div className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full">
-            <Heart className="h-4 w-4" fill="currentColor" />
+      <Link to={`/game/${id}`}>
+        <div className="absolute top-2 left-2 flex space-x-2 z-10">
+          <div className="flex items-center bg-white/20 backdrop-blur-sm text-orange-500 px-2 py-1 rounded-full">
+            <Flame className="h-3 w-3 mr-1" />
+            <span className="text-white text-xs">{heat}</span>
           </div>
-        )}
-        
-        {/* Age indicator */}
-        <div className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm text-accent-purple font-bold px-2 py-1 flex items-center justify-center rounded-full text-xs">
-          {ageRange}
-        </div>
-        
-        {/* Play button overlay */}
-        <div className="absolute inset-0 bg-black/0 hover:bg-black/30 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
-          <div className="bg-secondary rounded-full p-3 transform transition-transform hover:scale-110">
-            <Play className="h-6 w-6 text-white" fill="currentColor" />
+          <div className="flex items-center bg-white/20 backdrop-blur-sm text-blue-500 px-2 py-1 rounded-full">
+            <Calendar className="h-3 w-3 mr-1" />
+            <span className="text-white text-xs">{new Date(releaseDate).toLocaleDateString()}</span>
           </div>
         </div>
         
-        {/* Category icon */}
-        <div className="absolute bottom-2 left-2 bg-white/90 backdrop-blur-sm p-2 rounded-full">
-          <CategoryIcon className="h-5 w-5 text-primary" />
+        <div className="relative">
+          <img 
+            src={imageUrl} 
+            alt={title} 
+            className="w-full h-28 object-cover"
+          />
+          <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-2">
+            <span className="inline-block bg-purple-500 text-white text-xs px-2 py-1 rounded-full">
+              Ages {ageRange}
+            </span>
+          </div>
         </div>
-      </div>
-    </div>
+        
+        <div className="p-2">
+          <h3 className="text-white font-semibold text-sm line-clamp-2">{title}</h3>
+        </div>
+      </Link>
+    </motion.div>
   );
 }

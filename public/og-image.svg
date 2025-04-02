@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#4B9AFF"/>
+  
+  <!-- Game controller icon (centered) -->
+  <g transform="translate(250, 65) scale(1.2)">
+    <!-- Game controller shape -->
+    <path d="M396 186c-20-20-47-31-75-31H191c-28 0-55 11-75 31-20 20-31 47-31 75v70c0 28 11 55 31 75 20 20 47 31 75 31h130c28 0 55-11 75-31 20-20 31-47 31-75v-70c0-28-11-55-31-75z" fill="#764ABC"/>
+    
+    <!-- Left buttons -->
+    <circle cx="160" cy="256" r="20" fill="#FFD600"/>
+    <rect x="140" y="226" width="40" height="10" rx="5" fill="#FFD600"/>
+    <rect x="140" y="276" width="40" height="10" rx="5" fill="#FFD600"/>
+    <rect x="130" y="246" width="10" height="20" rx="5" fill="#FFD600"/>
+    <rect x="180" y="246" width="10" height="20" rx="5" fill="#FFD600"/>
+    
+    <!-- Right buttons -->
+    <circle cx="342" cy="226" r="15" fill="#FF4B4B"/>
+    <circle cx="382" cy="266" r="15" fill="#4BFF4B"/>
+    <circle cx="342" cy="306" r="15" fill="#FFFF4B"/>
+    <circle cx="302" cy="266" r="15" fill="#4B4BFF"/>
+    
+    <!-- Letter "O" -->
+    <text x="246" y="280" font-family="Arial" font-weight="bold" font-size="80" fill="white">O</text>
+  </g>
+  
+  <!-- Website name -->
+  <text x="600" y="480" font-family="Arial" font-weight="bold" font-size="60" text-anchor="middle" fill="white">OGame.Guru</text>
+  
+  <!-- Tagline -->
+  <text x="600" y="550" font-family="Arial" font-size="30" text-anchor="middle" fill="white">Free Online Games for Kids · Ages 3-10 · No Download</text>
+</svg> 
