@@ -1129,5 +1129,195 @@ export const games = [
     "category": "Adventure",
     "ageRange": "3-4",
     "src": "https://www.onlinegames.io/games/2022/unity4/cat-simulator/index.html"
-  }
+  },
+  {
+    "id": "TopofGalaxy",
+    "title": "Top of Galaxy",
+    "description": "",
+    "imageUrl": "https://imgs.crazygames.com/games/top-of-galaxy/cover-1660660879429.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+    "category": "Strategy",
+    "ageRange": "9-10",
+    "src": "https://games.crazygames.com/en_US/top-of-galaxy/index.html"
+},
+{
+    "id": "SushiMatching",
+    "title": "Sushi Matching",
+    "description": "",
+    "imageUrl": "https://imgs.crazygames.com/games/sushi-matching/cover-1657035976914.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+    "category": "Puzzle",
+    "ageRange": "3-4",
+    "src": "https://games.crazygames.com/en_US/sushi-matching/index.html"
+},
+{
+        "id": "PlumberSoda",
+        "title": "Plumber Soda",
+        "description": "",
+        "imageUrl": "https://imgs.crazygames.com/games/plumber-soda/cover-1657034879055.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+        "category": "Puzzle",
+        "ageRange": "3-4",
+        "src": "https://games.crazygames.com/en_US/plumber-soda/index.html"
+      },
+{
+        "id": "PizzaParty",
+        "title": "Pizza Party",
+        "description": "",
+        "imageUrl": "https://imgs.crazygames.com/games/pizza-party/cover-1657033321214.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+        "category": "Action",
+        "ageRange": "3-4",
+        "src": "https://games.crazygames.com/en_US/pizza-party/index.html"
+      },
+{
+    "id": "LinktheDots",
+    "title": "Link the Dots",
+    "description": "",
+    "imageUrl": "https://imgs.crazygames.com/games/link-the-dots/cover-1657030338830.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+    "category": "Puzzle",
+    "ageRange": "3-4",
+    "src": "https://games.crazygames.com/en_US/link-the-dots/index.html"
+},
+{
+    "id": "JellyIsland",
+    "title": "Jelly Island",
+    "description": "",
+    "imageUrl": "https://imgs.crazygames.com/games/jelly-island/cover-1657029632836.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+    "category": "Puzzle",
+    "ageRange": "3-4",
+    "src": "https://games.crazygames.com/en_US/jelly-island/index.html"
+},
+{
+    "id": "IceOMatik",
+    "title": "Ice O Matik",
+    "description": "",
+    "imageUrl": "https://imgs.crazygames.com/games/ice-o-matik/cover-1657029037141.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+    "category": "Puzzle",
+    "ageRange": "5-6",
+    "src": "https://games.crazygames.com/en_US/ice-o-matik/index.html"
+},
+{
+    "id": "DreamlikeRoom",
+    "title": "Dreamlike Room",
+    "description": "",
+    "imageUrl": "https://imgs.crazygames.com/games/dreamlike-room/cover-1657017932748.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+    "category": "Adventure",
+    "ageRange": "3-4",
+    "src": "https://games.crazygames.com/en_US/dreamlike-room/index.html"
+},
+{
+    "id": "CakeDesign",
+    "title": "Cake Design",
+    "description": "",
+    "imageUrl": "https://imgs.crazygames.com/games/cake-design/cover-1657015572041.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+    "category": "Puzzle",
+    "ageRange": "3-4",
+    "src": "https://games.crazygames.com/en_US/cake-design/index.html"
+},
+{
+    "id": "BreakfastTime",
+    "title": "Breakfast Time",
+    "description": "",
+    "imageUrl": "https://imgs.crazygames.com/games/breakfast-time/cover-1657014652339.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+    "category": "Puzzle",
+    "ageRange": "3-4",
+    "src": "https://games.crazygames.com/en_US/breakfast-time/index.html"
+},
+{
+        "id": "FourColorsMonumentEdition",
+        "title": "Four Colors: Monument Edition",
+        "description": "",
+        "imageUrl": "https://imgs.crazygames.com/games/four-colors-monument-edition/cover-1657014658820.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+        "category": "Puzzle",
+        "ageRange": "7-8",
+        "src": "https://games.crazygames.com/en_US/four-colors-monument-edition/index.html"
+      },
+{
+    "id": "FindPair",
+    "title": "Find Pair",
+    "description": "",
+    "imageUrl": "https://imgs.crazygames.com/games/find-pair/cover-1654790397383.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+    "category": "Puzzle",
+    "ageRange": "3-4",
+    "src": "https://games.crazygames.com/en_US/find-pair/index.html"
+},
+{
+        "id": "SpottheDifference2D",
+        "title": "Spot the Difference 2D",
+        "description": "",
+        "imageUrl": "https://imgs.crazygames.com/games/spot-the-difference-kids/cover-1654789767757.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+        "category": "Puzzle",
+        "ageRange": "3-4",
+        "src": "https://games.crazygames.com/en_US/spot-the-difference-kids/index.html"
+      },
+{
+        "id": "SuperSweetsChallenge",
+        "title": "Super Sweets Challenge",
+        "description": "",
+        "imageUrl": "https://imgs.crazygames.com/games/super-sweets-challenge/thumb-1570174809624.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+        "category": "Puzzle",
+        "ageRange": "3-4",
+        "src": "https://games.crazygames.com/en_US/super-sweets-challenge/index.html"
+      },
+{
+        "id": "TrickyCat",
+        "title": "Tricky Cat",
+        "description": "",
+        "imageUrl": "https://imgs.crazygames.com/games/tricky-cat/thumb-1567762020735.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+        "category": "Puzzle",
+        "ageRange": "7-8",
+        "src": "https://games.crazygames.com/en_US/tricky-cat/index.html"
+      },
+{
+        "id": "VoxelBot",
+        "title": "Voxel Bot",
+        "description": "",
+        "imageUrl": "https://imgs.crazygames.com/games/voxel-bot/thumb-1566323373783.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+        "category": "Action",
+        "ageRange": "9-10",
+        "src": "https://games.crazygames.com/en_US/voxel-bot/index.html"
+      },
+{
+        "id": "SuperPorkProtectstheEarth",
+        "title": "Super Pork: Protects the Earth",
+        "description": "",
+        "imageUrl": "https://imgs.crazygames.com/games/super-pork-protects-the-earth/thumb-1559324512609.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+        "category": "Action",
+        "ageRange": "3-4",
+        "src": "https://games.crazygames.com/en_US/super-pork-protects-the-earth/index.html"
+      },
+{
+    "id": "ChalkGardens",
+    "title": "Chalk Gardens",
+    "description": "",
+    "imageUrl": "https://imgs.crazygames.com/chalkgardens.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+    "category": "Puzzle",
+    "ageRange": "7-8",
+    "src": "https://games.crazygames.com/en_US/chalk-gardens/index.html"
+},
+{
+        "id": "ColorStars",
+        "title": "Color Stars",
+        "description": "",
+        "imageUrl": "https://imgs.crazygames.com/colorstars.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+        "category": "Puzzle",
+        "ageRange": "3-4",
+        "src": "https://games.crazygames.com/en_US/color-stars/index.html"
+      },
+{
+        "id": "Toby'sAdventures",
+        "title": "Toby's Adventures",
+        "description": "",
+        "imageUrl": "https://imgs.crazygames.com/tobysadventures.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+        "category": "Adventure",
+        "ageRange": "3-4",
+        "src": "https://games.crazygames.com/en_US/tobys-adventures/index.html"
+      },
+{
+        "id": "CubeNinja",
+        "title": "Cube Ninja",
+        "description": "",
+        "imageUrl": "https://imgs.crazygames.com/games/cube-ninja/cover-1657016503375.png?quality=70&fit=crop&metadata=none&width=178&height=100",
+        "category": "Action",
+        "ageRange": "7-8",
+        "src": "https://games.crazygames.com/en_US/cube-ninja/index.html"
+      }
+
 ];
